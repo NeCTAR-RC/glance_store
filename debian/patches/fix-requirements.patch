@@ -1,9 +1,11 @@
+diff --git a/requirements.txt b/requirements.txt
+index 5604f3a..e85c6fc 100644
 --- a/requirements.txt
 +++ b/requirements.txt
-@@ -12,6 +12,3 @@ eventlet>=0.13.0 #s3
- six>=1.4.1
+@@ -15,6 +15,3 @@ eventlet!=0.17.0,>=0.16.1
+ six>=1.9.0
  
- jsonschema>=2.0.0,<3.0.0
+ jsonschema<3.0.0,>=2.0.0
 -
 -# py2.6 compat
 -ordereddict

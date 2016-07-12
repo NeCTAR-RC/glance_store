@@ -1,0 +1,87 @@
+python-glance-store (0.9.1-1ubuntu1~cloud0) trusty-liberty; urgency=medium
+
+  * New update for the Ubuntu Cloud Archive.
+
+ -- Openstack Ubuntu Testing Bot <openstack-testing-bot@ubuntu.com>  Wed, 14 Oct 2015 18:00:02 +0000
+
+python-glance-store (0.9.1-1ubuntu1) wily; urgency=medium
+
+  * debian/patches/fix_swift_unit_tests.patch:
+    - Cherry-pick fix from upstream for broken unit tests with swiftclient
+      2.6.0 and higher (LP: #1505632).
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@canonical.com>  Wed, 14 Oct 2015 12:49:12 +0200
+
+python-glance-store (0.9.1-1) experimental; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Reviewed (build-)depends for this release.
+
+ -- James Page <james.page@ubuntu.com>  Mon, 28 Sep 2015 12:21:15 +0100
+
+python-glance-store (0.7.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Reviewed (build-)depends for this release.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 29 Jul 2015 23:05:43 +0200
+
+python-glance-store (0.6.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Updated (build-)depends for this release.
+  * Dropped requirements.txt patch (which was removing ordereddict).
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 08 Jul 2015 02:19:20 +0200
+
+python-glance-store (0.4.0-3) unstable; urgency=medium
+
+  * Made build reproducible (Closes: #788502), thanks to Juan Picca.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 12 Jun 2015 11:13:35 +0200
+
+python-glance-store (0.4.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Ensure unit test failures fail the package build.
+  * Update watch file to use Debian pypi redirector.
+  * Align dependency version requirements with Ubuntu and upstream.
+
+ -- James Page <jamespage@debian.org>  Fri, 12 Jun 2015 10:07:40 +0100
+
+python-glance-store (0.4.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 18 Mar 2015 13:49:47 +0100
+
+python-glance-store (0.1.10-2) experimental; urgency=medium
+
+  * Allow unit tests to fail.
+  * Added ordereddict to pydistoverrides.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 15 Dec 2014 17:06:40 +0800
+
+python-glance-store (0.1.10-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drops fix-tests.patch as it was applied upstream.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 14 Dec 2014 09:07:56 +0000
+
+python-glance-store (0.1.8-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Do not run the unit tests in Python 2.6.
+  * Added python-mox as build-depends.
+  * Added fix-tests.patch (Closes: #762115).
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 29 Sep 2014 15:13:49 +0800
+
+python-glance-store (0.1.3-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #760537)
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 05 Sep 2014 10:54:04 +0800

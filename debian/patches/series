@@ -1,2 +1,3 @@
 drop-git-sphinx.patch
 drop-enum34.patch
+fix-manifest.patch

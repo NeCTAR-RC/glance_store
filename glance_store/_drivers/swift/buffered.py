@@ -142,9 +142,9 @@ class BufferedReader(object):
             if len(buf) == 0:
                 self._tmpfile.seek(0)
                 self._buffered = True
-                self.is_zero_size = False
                 break
             self._tmpfile.write(buf)
+            self.is_zero_size = False
             to_buffer -= len(buf)
 
     # NOTE(belliott) seek and tell get used by python-swiftclient to "reset"

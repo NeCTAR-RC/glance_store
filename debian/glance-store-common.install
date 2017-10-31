@@ -1,0 +1,3 @@
+etc/glance/rootwrap.conf etc/glance
+etc/glance/rootwrap.d etc/glance
+debian/glance_sudoers /etc/sudoers.d

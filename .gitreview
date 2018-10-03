@@ -1,5 +1,5 @@
 [gerrit]
-host=review.openstack.org
+host=review.rc.nectar.org.au
 port=29418
-project=openstack/glance_store.git
-defaultbranch=stable/queens
+project=NeCTAR-RC/glance_store.git
+defaultbranch=nectar/queens

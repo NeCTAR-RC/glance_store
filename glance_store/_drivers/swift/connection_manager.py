@@ -153,7 +153,7 @@ class SingleTenantConnectionManager(SwiftConnectionManager):
                 return self.client.session.get_endpoint(
                     service_type=self.store.service_type,
                     interface=self.store.endpoint_type,
-                    region_name=self.store.region
+                    region_name=self.location.region
                 )
             except Exception as e:
                 # do the same that swift driver does

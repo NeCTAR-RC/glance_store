@@ -559,6 +559,7 @@ class StoreLocation(location.StoreLocation):
         self.auth_or_store_url = self.specs.get('auth_or_store_url')
         self.container = self.specs.get('container')
         self.obj = self.specs.get('obj')
+        self.region = self.conf.glance_store.swift_store_region
 
     def _get_credstring(self):
         if self.user and self.key:
@@ -604,6 +605,7 @@ class StoreLocation(location.StoreLocation):
                 self.conf, backend=self.backend_group).params
             self.user = ref_params[netloc]['user']
             self.key = ref_params[netloc]['key']
+            self.region = ref_params[netloc]['region']
             netloc = ref_params[netloc]['auth_address']
             self.ssl_enabled = True
             if netloc != '':
@@ -702,6 +704,7 @@ class StoreLocation(location.StoreLocation):
 
         # NOTE(Sridevi): Fix to map the account reference to the
         # corresponding configuration value
+        self.region = self.conf.glance_store.swift_store_region
         if self.scheme == 'swift+config':
             netloc = self._get_conf_value_from_account_ref(netloc)
         else:

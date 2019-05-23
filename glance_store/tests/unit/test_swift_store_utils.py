@@ -85,3 +85,5 @@ class TestSwiftParams(base.StoreBaseTest):
         self.assertEqual('http://example.com',
                          swift_params['ref2']['auth_address']
                          )
+        self.assertEqual('regionOne',
+                         swift_params['store_6']['region'])

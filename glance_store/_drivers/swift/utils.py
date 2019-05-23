@@ -143,6 +143,7 @@ class SwiftParams(object):
             default['user_domain_id'] = 'default'
             default['user_domain_name'] = None
             default['auth_version'] = glance_store.swift_store_auth_version
+            default['region'] = glance_store.swift_store_region
             return {glance_store.default_swift_reference: default}
         return {}
 
@@ -179,6 +180,12 @@ class SwiftParams(object):
                 except configparser.NoOptionError:
                     av = self.conf.glance_store.swift_store_auth_version
                     reference['auth_version'] = av
+
+                try:
+                    reference['region'] = CONFIG.get(ref, 'region')
+                except configparser.NoOptionError:
+                    region = self.conf.glance_store.swift_store_region
+                    reference['region'] = region
 
                 account_params[ref] = reference
             except (ValueError, SyntaxError, configparser.NoOptionError) as e:

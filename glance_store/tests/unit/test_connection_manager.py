@@ -30,6 +30,7 @@ class TestConnectionManager(base.StoreBaseTest):
                 "fake_token"}
 
         self.location = mock.create_autospec(swift_store.StoreLocation)
+        self.location.region = None
         self.context = mock.MagicMock()
         self.conf = mock.MagicMock()
 

@@ -1,0 +1,4 @@
+drop-sphinxcontrib-apidoc.patch
+drop-doc8.patch
+prevent-unicode-object-error-from-zero-byte-read.patch
+fix-python3-compatibility-of-rbd-get_fsid.patch

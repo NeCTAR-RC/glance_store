@@ -1,0 +1,53 @@
+From d0f80549496a7e97b56ddefc548694bbc8aafd24 Mon Sep 17 00:00:00 2001
+From: Michal Arbet <michal.arbet@ultimum.io>
+Date: Wed, 6 Feb 2019 18:38:22 +0100
+Subject: [PATCH] Fix python3 compatibility of rbd get_fsid
+
+In python3 conn.get_fsid() is represented as binary.
+Because of this, direct_url is corrupted in DB.
+This patch is fixing this. More informations in
+closing bug.
+
+Closes-Bug: #1816721
+
+Change-Id: I6a89042fae63bf5c9096a6bee6774aebf3f5864b
+(cherry picked from commit 9c73370358c02fc7f308d88f4563f22969a42c96)
+---
+ glance_store/_drivers/rbd.py | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/glance_store/_drivers/rbd.py b/glance_store/_drivers/rbd.py
+index 74e929b..9d48661 100644
+--- a/glance_store/_drivers/rbd.py
++++ b/glance_store/_drivers/rbd.py
+@@ -24,6 +24,7 @@ import logging
+ import math
+ 
+ from oslo_config import cfg
++from oslo_utils import encodeutils
+ from oslo_utils import units
+ from six.moves import urllib
+ 
+@@ -469,7 +470,18 @@ class Store(driver.Store):
+                                  rados_id=self.user) as conn:
+             fsid = None
+             if hasattr(conn, 'get_fsid'):
+-                fsid = conn.get_fsid()
++                # Librados's get_fsid is represented as binary
++                # in py3 instead of str as it is in py2.
++                # This is causing problems with ceph.
++                # Decode binary to str fixes these issues.
++                # Fix with encodeutils.safe_decode CAN BE REMOVED
++                # after librados's fix will be stable.
++                #
++                # More informations:
++                # https://bugs.launchpad.net/glance-store/+bug/1816721
++                # https://bugs.launchpad.net/cinder/+bug/1816468
++                # https://tracker.ceph.com/issues/38381
++                fsid = encodeutils.safe_decode(conn.get_fsid())
+             with conn.open_ioctx(self.pool) as ioctx:
+                 order = int(math.log(self.WRITE_CHUNKSIZE, 2))
+                 LOG.debug('creating image %s with order %d and size %d',
+-- 
+2.20.1
+

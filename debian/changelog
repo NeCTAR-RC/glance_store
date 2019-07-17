@@ -1,0 +1,350 @@
+python-glance-store (0.26.1-0ubuntu2.2~cloud0) bionic-rocky; urgency=medium
+
+  * New update for the Ubuntu Cloud Archive.
+
+ -- Openstack Ubuntu Testing Bot <openstack-testing-bot@ubuntu.com>  Tue, 18 Jun 2019 19:45:17 +0000
+
+python-glance-store (0.26.1-0ubuntu2.2) cosmic; urgency=medium
+
+  * d/p/fix-python3-compatibility-of-rbd-get_fsid.patch: Cherry-picked
+    from https://review.opendev.org/#/c/663857 to prevent invalid
+    characters from being stored in database (LP: #1816721).
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Mon, 10 Jun 2019 10:53:32 -0400
+
+python-glance-store (0.26.1-0ubuntu2.1) cosmic; urgency=medium
+
+  [ Sahid Orentino Ferdjaoui ]
+  * d/p/prevent-unicode-object-error-from-zero-byte-read.patch: Fix unicode
+    issue (LP: #1805332)
+
+  [ Corey Bryant ]
+  * d/gbp.conf: Create stable/rocky branch.
+
+ -- Sahid Orentino Ferdjaoui <sahid.ferdjaoui@canonical.com>  Wed, 24 Apr 2019 13:46:29 +0100
+
+python-glance-store (0.26.1-0ubuntu2) cosmic; urgency=medium
+
+  * d/p/drop-doc8.patch: Drop runtime requirement on doc8; its used
+    for style checking of RST documentation so is build time only.
+
+ -- James Page <james.page@ubuntu.com>  Tue, 14 Aug 2018 14:31:58 +0100
+
+python-glance-store (0.26.1-0ubuntu1) cosmic; urgency=medium
+
+  * New upstream point release for OpenStack Rocky.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Fri, 10 Aug 2018 15:32:53 -0400
+
+python-glance-store (0.26.0-0ubuntu1) cosmic; urgency=low
+
+  * Merge from Debian unstable.  Remaining changes:
+    - d/control: Enable autopkgtest-pkg-python testsuite.
+    - d/gbp.conf: Retain for gbp and pristine-tar config.
+    - d/watch: Get tarball from tarballs.openstack.org.
+    - d/rules: Skip tests for Py3.7.
+  * New upstream release for OpenStack Rocky.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/rules: Run tests with stestr.
+  * d/p/drop-sphinxcontrib-apidoc.patch: Drop sphinxcontrib.apidoc extension
+    until package is available.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Mon, 06 Aug 2018 10:40:13 -0400
+
+python-glance-store (0.23.0-3) unstable; urgency=medium
+
+  * Python 3 now has priority over Python 2.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 11 Mar 2018 20:24:20 +0000
+
+python-glance-store (0.23.0-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 25 Feb 2018 22:56:31 +0000
+
+python-glance-store (0.23.0-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Thomas Goirand ]
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+  * Standards-Version is now 4.1.3.
+  * Watch file using github tag over HTTPS.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 14 Feb 2018 08:35:38 +0000
+
+python-glance-store (0.23.0-0ubuntu1) bionic; urgency=medium
+
+  * New upstream release.
+  * d/*: wrap-and-sort -bast.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/control: Update Standards-Version to 4.1.2.
+  * d/control: Bump debhelper compat to 10.
+  * d/p/drop-openstackdoctheme.patch: Dropped. No longer needed.
+  * d/p/drop-enum34.patch: Rebased.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Wed, 24 Jan 2018 11:57:34 -0500
+
+python-glance-store (0.22.0-2) unstable; urgency=medium
+
+  * Only modify /etc/glance if files/dirs exist (Closes: #880087).
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 31 Oct 2017 10:13:46 +0000
+
+python-glance-store (0.22.0-1) experimental; urgency=medium
+
+  [ James Page ]
+  * d/glance-store-common.*,control,glance_sudoers: Add binary package for
+    shared rootwrap configuration, associated filters and sudoers.d
+    configuration (LP: #1609733).
+
+  [ Daniel Baumann ]
+  * Updating vcs fields.
+  * Updating copyright format url.
+  * Running wrap-and-sort -bast.
+  * Updating maintainer field.
+  * Updating standards version to 4.0.0.
+  * Removing gbp.conf, not used anymore or should be specified in the
+    developers dotfiles.
+  * Correcting permissions in debian packaging files.
+  * Updating standards version to 4.0.1.
+  * Updating standards version to 4.1.0.
+
+  [ Thomas Goirand ]
+  * New upstream release.
+  * Drop conf.py patch.
+  * Fixed (build-)depends for this release.
+  * Using pkgos-dh_auto_{install,test}.
+
+ -- Thomas Goirand <zigo@debian.org>  Sat, 07 Oct 2017 11:22:04 +0200
+
+python-glance-store (0.22.0-0ubuntu1) artful; urgency=medium
+
+  * d/watch: Get tarball from tarballs.openstack.org.
+  * New upstream release.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Tue, 15 Aug 2017 16:31:13 -0400
+
+python-glance-store (0.21.0-0ubuntu1) artful; urgency=medium
+
+  * New upstream release.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/p/drop-enum34.patch: Rebased.
+  * d/p/drop-openstackdoctheme.patch: Temporarily drop openstackdocstheme
+    sphinx extension until sphinx>=1.6.2 is available.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Fri, 04 Aug 2017 11:54:15 -0400
+
+python-glance-store (0.20.0-0ubuntu2) zesty; urgency=medium
+
+  * debian/glance-common.install: Fix rootwrap install. 
+
+ -- Chuck Short <zulcss@ubuntu.com>  Mon, 23 Jan 2017 05:20:19 -0500
+
+python-glance-store (0.20.0-0ubuntu1) zesty; urgency=medium
+
+  * New upstream release.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/p/drop-git-sphinx.patch: Dropped. Fixed upstream.
+  * d/p/drop-enum34.patch: Rebased.
+  * New upstream release.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 19 Jan 2017 12:15:32 -0500
+
+python-glance-store (0.18.0-0ubuntu3) zesty; urgency=medium
+
+  * d/gbp.conf: Update default config.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Fri, 04 Nov 2016 08:09:18 -0400
+
+python-glance-store (0.18.0-0ubuntu2) zesty; urgency=medium
+
+  [ Corey Bryant ]
+  * d/control: Add run-time dependency for python-swiftclient (LP: #1604397).
+  * d/p/drop-enum34.patch: Fix python3 test failures.
+
+  [ Thomas Goirand ]
+  * Fixed enum34 runtime depends.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 03 Nov 2016 15:20:09 -0400
+
+python-glance-store (0.18.0-0ubuntu1) yakkety; urgency=medium
+
+  [ James Page ]
+  * d/glance-store-common.*,control,glance_sudoers: Add binary package for
+    shared rootwrap configuration, associated filters and sudoers.d
+    configuration (LP: #1609733).
+
+  [ Corey Bryant ]
+  * New upstream release.
+  * .gitreview: Copy from orig tar ball.
+  * d/gbp.conf: Update debian-branch for Newton.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/p/drop-git-sphinx.patch: Rebased.
+  * glance_store/tests/unit/test_swift_store.py: Copied from orig tarball.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Fri, 02 Sep 2016 13:08:17 -0400
+
+python-glance-store (0.13.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+  * Standards-Version is 3.9.8 now (no change)
+  * Fixed package description typo (Closes: #820616)
+  * d/rules: Changed UPSTREAM_GIT protocol to https
+  * d/copyright: Changed source URL to https protocol
+  * Removed Mock_swiftclient_s_functions_in_tests.patch
+    (Applied upstream)
+
+ -- Ondřej Nový <novy@ondrej.org>  Thu, 19 May 2016 21:57:40 +0200
+
+python-glance-store (0.13.0-3) unstable; urgency=medium
+
+  * Added Mock_swiftclient_s_functions_in_tests.patch to allow swiftclient
+    >= 3.x to work.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 05 Apr 2016 16:14:31 +0000
+
+python-glance-store (0.13.0-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 05 Apr 2016 11:50:37 +0000
+
+python-glance-store (0.13.0-1) experimental; urgency=medium
+
+  [ Corey Bryant ]
+  * New upstream release.
+  * d/control: Add python-cinderclient and python-oslosphinx to BDs.
+  * d/p/drop-sphinx-git.patch, d/control: Drop use of git from sphinx config.
+
+  [ Thomas Goirand ]
+  * Added Corey Bryant <corey.bryant@canonical.com> as Uploaders.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 22 Mar 2016 12:19:02 +0000
+
+python-glance-store (0.12.0-1) experimental; urgency=medium
+
+  [ Corey Bryant ]
+  * New upstream release.
+  * d/control: Align (Build-)Depends with upstream.
+
+  [ Thomas Goirand ]
+  * Standards-Version: 3.9.7 (no change).
+  * Using update-alternatives for /usr/bin/glance-rootwrap.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 03 Mar 2016 19:54:18 +0000
+
+python-glance-store (0.10.0-2) experimental; urgency=medium
+
+  * Added Python 3 support.
+  * Fixed missing pymongo build-depends-indep.
+  * VCS urls using https.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 05 Feb 2016 12:48:07 +0000
+
+python-glance-store (0.10.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Fixed (build-)depends for this release.
+  * Fixed debian/copyright ordering.
+  * Reactivate failed tests.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 21 Jan 2016 08:31:34 +0000
+
+python-glance-store (0.9.1-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+  * Black list 9 more unit tests:
+    - test_swift_store.TestStoreAuthV1.test_read_acl_public
+    - test_swift_store.TestStoreAuthV1.test_read_acl_tenants
+    - test_swift_store.TestStoreAuthV1.test_write_acls
+    - test_swift_store.TestStoreAuthV2.test_read_acl_public
+    - test_swift_store.TestStoreAuthV2.test_read_acl_tenants
+    - test_swift_store.TestStoreAuthV2.test_write_acls
+    - test_swift_store.TestStoreAuthV3.test_read_acl_public
+    - test_swift_store.TestStoreAuthV3.test_read_acl_tenants
+    - test_swift_store.TestStoreAuthV3.test_write_acls
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 16 Oct 2015 09:35:58 +0000
+
+python-glance-store (0.9.1-1) experimental; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Reviewed (build-)depends for this release.
+
+ -- James Page <james.page@ubuntu.com>  Mon, 28 Sep 2015 12:21:15 +0100
+
+python-glance-store (0.7.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Reviewed (build-)depends for this release.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 29 Jul 2015 23:05:43 +0200
+
+python-glance-store (0.6.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Updated (build-)depends for this release.
+  * Dropped requirements.txt patch (which was removing ordereddict).
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 08 Jul 2015 02:19:20 +0200
+
+python-glance-store (0.4.0-3) unstable; urgency=medium
+
+  * Made build reproducible (Closes: #788502), thanks to Juan Picca.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 12 Jun 2015 11:13:35 +0200
+
+python-glance-store (0.4.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Ensure unit test failures fail the package build.
+  * Update watch file to use Debian pypi redirector.
+  * Align dependency version requirements with Ubuntu and upstream.
+
+ -- James Page <jamespage@debian.org>  Fri, 12 Jun 2015 10:07:40 +0100
+
+python-glance-store (0.4.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 18 Mar 2015 13:49:47 +0100
+
+python-glance-store (0.1.10-2) experimental; urgency=medium
+
+  * Allow unit tests to fail.
+  * Added ordereddict to pydistoverrides.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 15 Dec 2014 17:06:40 +0800
+
+python-glance-store (0.1.10-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drops fix-tests.patch as it was applied upstream.
+
+ -- Thomas Goirand <zigo@debian.org>  Sun, 14 Dec 2014 09:07:56 +0000
+
+python-glance-store (0.1.8-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Do not run the unit tests in Python 2.6.
+  * Added python-mox as build-depends.
+  * Added fix-tests.patch (Closes: #762115).
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 29 Sep 2014 15:13:49 +0800
+
+python-glance-store (0.1.3-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #760537)
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 05 Sep 2014 10:54:04 +0800
+

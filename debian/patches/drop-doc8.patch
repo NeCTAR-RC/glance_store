@@ -1,19 +1,5 @@
-Description: Move doc8 to test requirements
- doc8 is not required to use this module, only for style
- checking of RST documentation.
-Author: James Page <james.page@canonical.com>
-Forwarded: https://review.openstack.org/#/c/591664/
-
---- a/glance_store.egg-info/requires.txt
-+++ b/glance_store.egg-info/requires.txt
-@@ -4,7 +4,6 @@ oslo.serialization!=2.19.1,>=2.18.0
- oslo.utils>=3.33.0
- oslo.concurrency>=3.26.0
- stevedore>=1.20.0
--doc8>=0.6.0
- eventlet!=0.18.3,!=0.20.1,>=0.18.2
- six>=1.10.0
- jsonschema<3.0.0,>=2.6.0
+diff --git a/requirements.txt b/requirements.txt
+index 3a9df0a..e02741c 100644
 --- a/requirements.txt
 +++ b/requirements.txt
 @@ -8,7 +8,6 @@ oslo.utils>=3.33.0 # Apache-2.0

@@ -1,0 +1,2 @@
+drop-sphinxcontrib-apidoc.patch
+prevent-unicode-object-error-from-zero-byte-read.patch

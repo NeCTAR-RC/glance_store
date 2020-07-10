@@ -1,0 +1,2 @@
+debian/glance_sudoers /etc/sudoers.d
+etc/* /etc/glance/
